@@ -13,13 +13,9 @@ import os
 # 所以开始只下载第一页，得到页码信息后重新返回self.parse进行所有分页的数据下载
 # 取得图片id信息后，下载大图的url地址为'https://wx2.sinaimg.cn/mw690/' + img_id
 
-
-# Cookies带错了，返回的都正常，就是把要取的东西给我去了，想要的数据取不到，所以问题出现在cookies上，我一直在检查异步加载
-# 所以要经常检查cookies，cookies经常会变
 # 访问太快返回414 429，在setting里加入DOWNLOAD_DELAY参数，只需0.5秒即可
 # 但更好的方法是RETRY_HTTP_CODES = [429]
-# AUTOTHROTTLE_ENABLED = True
-# 自动限速，防止下载内容遗漏
+# AUTOTHROTTLE_ENABLED = True，自动限速，防止下载内容遗漏
 
 def get_cookies(cookies_string):
     cookies_string = '; ' + cookies_string + ';'
